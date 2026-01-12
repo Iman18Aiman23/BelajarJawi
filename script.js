@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- DATA (Tiada Perubahan) ---
+    // --- DATA ---
+    // Data untuk bahagian belajar huruf
     const hurufJawi = [
         { jawi: 'ا', rumi: 'Alif', contoh: 'Ayam', gambar: 'images/ayam.svg' },
         { jawi: 'ب', rumi: 'Ba', contoh: 'Basikal', gambar: 'images/basikal.svg' },
@@ -35,67 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
         { jawi: 'چ', rumi: 'Cha', contoh: 'Cakar', gambar: 'images/harimau.svg' }, 
     ];
 
+    // DATA BARU: untuk nombor Jawi
+    const nomborJawi = [
+        { jawi: '٠', rumi: '0', contoh: 'Sifar' },
+        { jawi: '١', rumi: '1', contoh: 'Satu' },
+        { jawi: '٢', rumi: '2', contoh: 'Dua' },
+        { jawi: '٣', rumi: '3', contoh: 'Tiga' },
+        { jawi: '٤', rumi: '4', contoh: 'Empat' },
+        { jawi: '٥', rumi: '5', contoh: 'Lima' },
+        { jawi: '٦', rumi: '6', contoh: 'Enam' },
+        { jawi: '٧', rumi: '7', contoh: 'Tujuh' },
+        { jawi: '٨', rumi: '8', contoh: 'Lapan' },
+        { jawi: '٩', rumi: '9', contoh: 'Sembilan' },
+    ];
+
+    // Data untuk kuiz
     const soalanQuiz = {
         easy: [
-             { jawi: 'باڤ', rumi: 'bapa' },
-            { jawi: 'ايبو', rumi: 'ibu' },
-            { jawi: 'ماساکن', rumi: 'masakan' },
-            { jawi: 'رومه', rumi: 'rumah' },
-            { jawi: 'سکوله', rumi: 'sekolah' },
-            { jawi: 'اديق', rumi: 'adik' },
-            { jawi: 'کاک', rumi: 'kakak' },
-            { jawi: 'ابڠ', rumi: 'abang' },
-            { jawi: 'ننک', rumi: 'nenek' },
-            { jawi: 'داتوک', rumi: 'datuk' },
-            { jawi: 'ميجا', rumi: 'meja' },
-            { jawi: 'کروسي', rumi: 'kerusi' },
-            { jawi: 'بوكو', rumi: 'buku' },
-            { jawi: 'ڤن', rumi: 'pen' },
-            { jawi: 'کريتا', rumi: 'kereta' },
-            { jawi: 'موتوسيکل', rumi: 'motosikal' },
-            { jawi: 'ماکن', rumi: 'makan' },
-            { jawi: 'مينوم', rumi: 'minum' },
-            { jawi: 'تيدور', rumi: 'tidur' },
-            { jawi: 'ماندي', rumi: 'mandi' },
-            { jawi: 'ساي', rumi: 'saya' },
-            { jawi: 'اوک', rumi: 'awak' },
-            { jawi: 'دي', rumi: 'dia' },
-            { jawi: 'کامي', rumi: 'kami' },
-            { jawi: 'مريک', rumi: 'mereka' },
-            { jawi: 'ناسي', rumi: 'nasi' },
-            { jawi: 'ايام', rumi: 'ayam' },
-            { jawi: 'ايکن', rumi: 'ikan' },
-            { jawi: 'سايور', rumi: 'sayur' },
-            { jawi: 'اير', rumi: 'air' },
-            { jawi: 'کوڤي', rumi: 'kopi' },
-            { jawi: 'کوسيڠ', rumi: 'kucing' },
-            { jawi: 'انجيڠ', rumi: 'anjing' },
-            { jawi: 'لمبو', rumi: 'lembu' },
-            { jawi: 'کمبيڠ', rumi: 'kambing' },
-            { jawi: 'ڤاسر', rumi: 'pasar' },
-            { jawi: 'کداي', rumi: 'kedai' },
-            { jawi: 'مسجد', rumi: 'masjid' },
-            { jawi: 'تامن', rumi: 'taman' },
-            { jawi: 'جالن', rumi: 'jalan' },
-            { jawi: 'بسر', rumi: 'besar' },
-            { jawi: 'کچيل', rumi: 'kecil' },
-            { jawi: 'باءيق', rumi: 'baik' },
-            { jawi: 'بوروق', rumi: 'buruk' },
-            { jawi: 'سلامت ڤاڬي', rumi: 'selamat pagi' },
-            { jawi: 'سلامت مالم', rumi: 'selamat malam' },
-            { jawi: 'تريما كاسيه', rumi: 'terima kasih' },
-            { jawi: 'سما-سما', rumi: 'sama-sama' },
-            { jawi: 'ساتو', rumi: 'satu' },
-            { jawi: 'دوا', rumi: 'dua' },
-            { jawi: 'تيڬ', rumi: 'tiga' },
-            { jawi: 'مڤت', rumi: 'empat' },
-            { jawi: 'ليما', rumi: 'lima' }
+            { jawi: 'بابو', rumi: 'bapa' }, { jawi: 'ايبو', rumi: 'ibu' }, { jawi: 'ماسakan', rumi: 'masakan' },
+            { jawi: 'رمان', rumi: 'rumah' }, { jawi: 'سكوله', rumi: 'sekolah' }
         ],
         medium: [
-            { jawi: 'ابو ماءين بولا', rumi: 'Abu main bola' }, { jawi: 'ساي سوک ماکن', rumi: 'Saya suka makan' },
-            { jawi: 'بولا ايت بيرو', rumi: 'Bola itu biru' },
-            { jawi: 'ساي اد اديق', rumi: 'Saya ada adik' },
-            { jawi: 'نام ساي ايمن', rumi: 'Nama saya Aiman' }
+            { jawi: 'اورڠ دالم بس', rumi: 'orang dalam bas' }, { jawi: 'كنيڠ اسو امڤو', rumi: 'kucing ayam kampung' },
+            { jawi: 'ساي سوك مكن ناسي ليماق', rumi: 'saya suka makan nasi lemak' },
+            { jawi: 'دي كمنن ايتادا بنيق بيسق', rumi: 'di kampong itu ada pokok pisang' },
+            { jawi: 'موريد موريد دسن سواء بلجار', rumi: 'murid murid duduk sambil belajar' }
         ],
         hard: [
             { jawi: 'برسلتن کبڠساءن مليسيا', rumi: 'pertubuhan kebangsaan malaysia' },
@@ -110,9 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeSection = document.getElementById('homeSection');
     const belajarBtn = document.getElementById('belajarBtn');
     const quizBtn = document.getElementById('quizBtn');
+    const homeBtn = document.getElementById('homeBtn'); // BUTANG HOME BARU
     const belajarModal = document.getElementById('belajarModal');
     const closeModalBtn = document.querySelector('.close-btn');
     const hurufGrid = document.getElementById('hurufGrid');
+    const nomborGrid = document.getElementById('nomborGrid'); // GRID NOMBOR BARU
     const quizSection = document.getElementById('quizSection');
     const diffBtns = document.querySelectorAll('.diff-btn');
     const quizArea = document.getElementById('quizArea');
@@ -121,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submitBtn');
     const feedback = document.getElementById('feedback');
     const nextBtn = document.getElementById('nextBtn');
-    const cancelBtn = document.getElementById('cancelBtn'); // BUTANG BATAL BARU
+    const cancelBtn = document.getElementById('cancelBtn');
     const scoreDisplay = document.getElementById('score');
     const currentQuestionDisplay = document.getElementById('currentQuestion');
     const totalQuestionsDisplay = document.getElementById('totalQuestions');
@@ -130,34 +97,69 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
+    let isAnswerSubmitted = false; // FLAG BARU untuk kawalan kuiz
 
     // --- EVENT LISTENERS ---
+    homeBtn.addEventListener('click', goToHomepage); // LISTENER BARU
     belajarBtn.addEventListener('click', tampilkanModalBelajar);
     closeModalBtn.addEventListener('click', tutupModalBelajar);
     quizBtn.addEventListener('click', mulakanKuiz);
     window.addEventListener('click', (event) => { if (event.target == belajarModal) tutupModalBelajar(); });
     diffBtns.forEach(btn => { btn.addEventListener('click', () => pilihTahap(btn.dataset.level)); });
-    submitBtn.addEventListener('click', semakJawapan);
-    answerInput.addEventListener('keyup', (event) => { if (event.key === 'Enter') semakJawapan(); });
-    nextBtn.addEventListener('click', soalanSeterusnya);
-    cancelBtn.addEventListener('click', resetQuiz); // EVENT LISTENER BARU
+    // Listener untuk kawalan kuiz dengan "Enter"
+    answerInput.addEventListener('keyup', handleQuizInput);
+    cancelBtn.addEventListener('click', resetQuiz);
 
     // --- FUNCTIONS ---
+    // FUNGSI BARU: Untuk navigasi ke homepage
+    function goToHomepage() {
+        resetQuiz();
+        tutupModalBelajar();
+    }
+
     function tampilkanModalBelajar() {
+        // Kosongkan grid terlebih dahulu
         hurufGrid.innerHTML = '';
+        nomborGrid.innerHTML = '';
+
+        // Paparkan huruf
         hurufJawi.forEach((huruf, index) => {
-            const card = document.createElement('div');
-            card.className = 'huruf-card';
-            card.style.animationDelay = `${index * 0.05}s`;
-            card.innerHTML = `
-                <div class="jawi">${huruf.jawi}</div>
-                <div class="rumi">${huruf.rumi}</div>
-                <div class="contoh">${huruf.contoh}</div>
-                <img src="${huruf.gambar}" alt="${huruf.contoh}" loading="lazy">
-            `;
+            const card = createHurufCard(huruf, index);
             hurufGrid.appendChild(card);
         });
+
+        // Paparkan nombor
+        nomborJawi.forEach((nombor, index) => {
+            const card = createNomborCard(nombor, index);
+            nomborGrid.appendChild(card);
+        });
+
         belajarModal.style.display = 'block';
+    }
+
+    function createHurufCard(huruf, index) {
+        const card = document.createElement('div');
+        card.className = 'huruf-card';
+        card.style.animationDelay = `${index * 0.03}s`;
+        card.innerHTML = `
+            <div class="jawi">${huruf.jawi}</div>
+            <div class="rumi">${huruf.rumi}</div>
+            <div class="contoh">${huruf.contoh}</div>
+            <img src="${huruf.gambar}" alt="${huruf.contoh}" loading="lazy">
+        `;
+        return card;
+    }
+
+    function createNomborCard(nombor, index) {
+        const card = document.createElement('div');
+        card.className = 'huruf-card';
+        card.style.animationDelay = `${index * 0.05}s`;
+        card.innerHTML = `
+            <div class="jawi">${nombor.jawi}</div>
+            <div class="rumi">${nombor.rumi}</div>
+            <div class="contoh">${nombor.contoh}</div>
+        `;
+        return card;
     }
 
     function tutupModalBelajar() {
@@ -195,21 +197,29 @@ document.addEventListener('DOMContentLoaded', () => {
             feedback.textContent = '';
             feedback.className = 'feedback-text';
             currentQuestionDisplay.textContent = currentQuestionIndex + 1;
-            nextBtn.classList.add('hidden');
-            submitBtn.disabled = false;
+            isAnswerSubmitted = false; // Reset flag
             answerInput.disabled = false;
             answerInput.focus();
         } else {
             // Tamat Kuiz
             questionText.textContent = 'Kuiz Tamat!';
             answerInput.style.display = 'none';
-            submitBtn.style.display = 'none';
             feedback.innerHTML = `Skor Akhir Anda: <strong>${score} / ${currentQuestions.length}</strong>`;
             feedback.className = 'feedback-text correct';
             nextBtn.textContent = 'Main Semula';
             nextBtn.classList.remove('hidden');
-            // Guna resetQuiz untuk butang "Main Semula"
-            nextBtn.onclick = resetQuiz; 
+            nextBtn.onclick = goToHomepage; // Guna fungsi baru
+        }
+    }
+
+    // FUNGSI BARU: Mengendalikan input kuiz
+    function handleQuizInput(event) {
+        if (event.key === 'Enter') {
+            if (!isAnswerSubmitted) {
+                semakJawapan();
+            } else {
+                soalanSeterusnya();
+            }
         }
     }
 
@@ -227,9 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
             feedback.className = 'feedback-text incorrect';
         }
 
-        submitBtn.disabled = true;
+        isAnswerSubmitted = true; // Tandakan jawapan telah diserahkan
         answerInput.disabled = true;
-        nextBtn.classList.remove('hidden');
     }
 
     function soalanSeterusnya() {
@@ -241,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10);
     }
 
-    // FUNGSI BARU: Untuk reset kuiz dan kembali ke homepage
     function resetQuiz() {
         // Reset UI
         homeSection.classList.remove('hidden');
@@ -251,18 +259,17 @@ document.addEventListener('DOMContentLoaded', () => {
         currentQuestions = [];
         currentQuestionIndex = 0;
         score = 0;
+        isAnswerSubmitted = false;
         scoreDisplay.textContent = '0';
         
-        // Reset quiz UI elements to initial state
+        // Reset quiz UI elements
         feedback.textContent = '';
         feedback.className = 'feedback-text';
         answerInput.value = '';
-        answerInput.style.display = 'block'; // Pastikan input field kelihatan
-        submitBtn.style.display = 'block';   // Pastikan butang hantar kelihatan
+        answerInput.style.display = 'block';
         answerInput.disabled = false;
-        submitBtn.disabled = false;
         nextBtn.classList.add('hidden');
-        nextBtn.onclick = soalanSeterusnya; // Kembalikan fungsi asal butang next
+        nextBtn.onclick = soalanSeterusnya;
 
         // Reset difficulty selection
         diffBtns.forEach(btn => btn.classList.remove('active'));
