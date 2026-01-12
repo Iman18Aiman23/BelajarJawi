@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { jawi: 'د', rumi: 'Dal', contoh: 'Dubuk', gambar: 'https://i.imgur.com/vH4f5rI.png' },
         { jawi: 'ذ', rumi: 'Zal', contoh: 'Zirafah', gambar: 'https://i.imgur.com/X1t2JkL.png' },
         { jawi: 'ر', rumi: 'Ra', contoh: 'Rusa', gambar: 'https://i.imgur.com/Wx4tL9m.png' },
-        { jawi: 'ز', rumi: 'Za', contoh: 'Zebra', gambar: 'https://i.imgur.com/h6J0kPn.png' },
+        { jawi: 'ز', rumi: 'Za', contoh: 'Zebra', gambar: 'https://images.icon-icons.com/1446/PNG/96/22229zebra_98835.png' },
         { jawi: 'س', rumi: 'Sin', contoh: 'Singa', gambar: 'https://i.imgur.com/m5n4qoR.png' },
         { jawi: 'ش', rumi: 'Syin', contoh: 'Syarikat', gambar: 'https://i.imgur.com/g7K8l3s.png' },
         { jawi: 'ص', rumi: 'Sad', contoh: 'Sotong', gambar: 'https://i.imgur.com/p0Q9rT2.png' },
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { jawi: 'و', rumi: 'Wau', contoh: 'Wau', gambar: 'https://i.imgur.com/a2B7hH1.png' },
         { jawi: 'ه', rumi: 'Ha', contoh: 'Helikopter', gambar: 'https://i.imgur.com/b3C8iI2.png' },
         { jawi: 'ي', rumi: 'Ya', contoh: 'Yoyo', gambar: 'https://i.imgur.com/c4D9jJ3.png' },
-        { jawi: 'ڠ', rumi: 'Nga', contoh: 'Naga', gambar: 'https://i.imgur.com/d5E0kK4.png' },
-        { jawi: 'ڤ', rumi: 'Pa', contoh: 'Papan', gambar: 'https://i.imgur.com/e6F1lL5.png' },
+        { jawi: 'ڠ', rumi: 'Nga', contoh: 'Naga', gambar: 'https://images.icon-icons.com/1446/PNG/96/22287dragon_98813.png' },
+        { jawi: 'ڤ', rumi: 'Pa', contoh: 'Papan', gambar: 'https://img.freepik.com/free-vector/colorful-cosmos-flowers-terracotta-pot_1308-181734.jpg?semt=ais_hybrid&w=740&q=80' },
         { jawi: 'چ', rumi: 'Cha', contoh: 'Cakar', gambar: 'https://i.imgur.com/f7G2mM6.png' },
     ];
 
