@@ -44,11 +44,37 @@ body {
     max-width: 900px;
     width: 100%;
     animation: fadeIn 0.8s ease-out;
+    position: relative; /* For positioning the home button */
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home Button Style */
+.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: var(--text-primary);
+    color: #667eea;
+    transform: scale(1.1);
 }
 
 header h1 {
@@ -108,7 +134,7 @@ header p {
 }
 
 /* ===================================
-   Modal (Belajar Section)
+   Modal (Belajar Section) - DIKEMASKINI
    =================================== */
 .modal {
     display: none; 
@@ -127,14 +153,23 @@ header p {
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    margin: 3% auto; 
+    margin: 2% auto; /* Dikurangkan margin untuk modal lebih besar */
     padding: 40px;
     border: 1px solid var(--glass-border);
     width: 95%;
-    max-width: 1000px;
+    max-width: 1200px; /* Diperbesarkan max-width */
+    height: 90vh; /* Ditetapkan height */
     border-radius: 20px;
     position: relative;
     animation: slideIn 0.5s;
+    /* Gaya untuk menyembunyikan scrollbar */
+    overflow-y: scroll; /* Benarkan scroll */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
 }
 
 @keyframes slideIn {
@@ -159,34 +194,40 @@ header p {
 
 .huruf-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Diperkecil min-width untuk muat lebih banyak */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.nombor-title {
     margin-top: 30px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 20px;
 }
 
 .huruf-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px; /* Dikurangkan padding */
     text-align: center;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .huruf-card:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
     background: rgba(255, 255, 255, 0.15);
 }
 
 .huruf-card .jawi {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Dikurangkan sedikit */
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 5px;
 }
 
 .huruf-card .rumi {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-secondary);
 }
@@ -199,8 +240,8 @@ header p {
 }
 
 .huruf-card img {
-    width: 70px;
-    height: 70px;
+    width: 60px; /* Dikurangkan saiz */
+    height: 60px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 10px;
@@ -233,7 +274,7 @@ header p {
     border: 2px solid var(--glass-border);
     background-color: var(--glass-bg);
     color: var(--text-primary);
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -257,7 +298,7 @@ header p {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -333,7 +374,7 @@ header p {
     margin-top: 20px;
     font-weight: 600;
     font-size: 1.2rem;
-    min-height: 30px; /* Prevents layout jump */
+    min-height: 30px;
 }
 
 .correct {
