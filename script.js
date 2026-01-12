@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { jawi: 'چ', rumi: 'Cha', contoh: 'Cakar', gambar: 'images/harimau.svg' }, 
     ];
 
-    // DATA BARU: untuk nombor Jawi
+    // DATA UNTUK NOMBOR JAWI
     const nomborJawi = [
         { jawi: '٠', rumi: '0', contoh: 'Sifar' },
         { jawi: '١', rumi: '1', contoh: 'Satu' },
@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeSection = document.getElementById('homeSection');
     const belajarBtn = document.getElementById('belajarBtn');
     const quizBtn = document.getElementById('quizBtn');
-    const homeBtn = document.getElementById('homeBtn'); // BUTANG HOME BARU
+    const homeBtn = document.getElementById('homeBtn');
     const belajarModal = document.getElementById('belajarModal');
     const closeModalBtn = document.querySelector('.close-btn');
     const hurufGrid = document.getElementById('hurufGrid');
-    const nomborGrid = document.getElementById('nomborGrid'); // GRID NOMBOR BARU
+    const nomborGrid = document.getElementById('nomborGrid'); // PASTIKAN INI ADA
     const quizSection = document.getElementById('quizSection');
     const diffBtns = document.querySelectorAll('.diff-btn');
     const quizArea = document.getElementById('quizArea');
@@ -97,21 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
-    let isAnswerSubmitted = false; // FLAG BARU untuk kawalan kuiz
+    let isAnswerSubmitted = false;
 
     // --- EVENT LISTENERS ---
-    homeBtn.addEventListener('click', goToHomepage); // LISTENER BARU
+    homeBtn.addEventListener('click', goToHomepage);
     belajarBtn.addEventListener('click', tampilkanModalBelajar);
     closeModalBtn.addEventListener('click', tutupModalBelajar);
     quizBtn.addEventListener('click', mulakanKuiz);
     window.addEventListener('click', (event) => { if (event.target == belajarModal) tutupModalBelajar(); });
     diffBtns.forEach(btn => { btn.addEventListener('click', () => pilihTahap(btn.dataset.level)); });
-    // Listener untuk kawalan kuiz dengan "Enter"
-    answerInput.addEventListener('keyup', handleQuizInput);
+    
+    // PEMBAIKAN: Dengan "Enter" pada keseluruhan dokumen
+    document.addEventListener('keyup', handleQuizInput);
+    
     cancelBtn.addEventListener('click', resetQuiz);
 
     // --- FUNCTIONS ---
-    // FUNGSI BARU: Untuk navigasi ke homepage
     function goToHomepage() {
         resetQuiz();
         tutupModalBelajar();
@@ -201,20 +202,20 @@ document.addEventListener('DOMContentLoaded', () => {
             answerInput.disabled = false;
             answerInput.focus();
         } else {
-            // Tamat Kuiz
             questionText.textContent = 'Kuiz Tamat!';
             answerInput.style.display = 'none';
             feedback.innerHTML = `Skor Akhir Anda: <strong>${score} / ${currentQuestions.length}</strong>`;
             feedback.className = 'feedback-text correct';
             nextBtn.textContent = 'Main Semula';
             nextBtn.classList.remove('hidden');
-            nextBtn.onclick = goToHomepage; // Guna fungsi baru
+            nextBtn.onclick = goToHomepage;
         }
     }
 
-    // FUNGSI BARU: Mengendalikan input kuiz
+    // PEMBAIKAN: Fungsi untuk mengendalikan input "Enter"
     function handleQuizInput(event) {
-        if (event.key === 'Enter') {
+        // Hanya berfungsi jika "Enter" ditekan dan kuiz sedang aktif
+        if (event.key === 'Enter' && !quizArea.classList.contains('hidden')) {
             if (!isAnswerSubmitted) {
                 semakJawapan();
             } else {
@@ -228,16 +229,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const jawapanBetul = currentQuestions[currentQuestionIndex].rumi.toLowerCase().trim();
 
         if (jawapanPengguna === jawapanBetul) {
-            feedback.textContent = 'Betul! 🎉';
+            feedback.textContent = 'Betul! 🎉 Tekan Enter untuk sambung.';
             feedback.className = 'feedback-text correct';
             score++;
             scoreDisplay.textContent = score;
         } else {
-            feedback.textContent = `Salah. Jawapan betul: ${currentQuestions[currentQuestionIndex].rumi}`;
+            feedback.textContent = `Salah. Jawapan betul: ${currentQuestions[currentQuestionIndex].rumi}. Tekan Enter untuk sambung.`;
             feedback.className = 'feedback-text incorrect';
         }
 
-        isAnswerSubmitted = true; // Tandakan jawapan telah diserahkan
+        isAnswerSubmitted = true;
         answerInput.disabled = true;
     }
 
@@ -251,18 +252,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetQuiz() {
-        // Reset UI
         homeSection.classList.remove('hidden');
         quizSection.classList.add('hidden');
         
-        // Reset state
         currentQuestions = [];
         currentQuestionIndex = 0;
         score = 0;
         isAnswerSubmitted = false;
         scoreDisplay.textContent = '0';
         
-        // Reset quiz UI elements
         feedback.textContent = '';
         feedback.className = 'feedback-text';
         answerInput.value = '';
@@ -271,7 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nextBtn.classList.add('hidden');
         nextBtn.onclick = soalanSeterusnya;
 
-        // Reset difficulty selection
         diffBtns.forEach(btn => btn.classList.remove('active'));
         document.querySelector('.difficulty-buttons').style.display = 'flex';
         quizSection.querySelector('h2').style.display = 'block';
