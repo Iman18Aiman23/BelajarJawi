@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const soalanQuiz = {
         easy: [
-            { jawi: 'بابو', rumi: 'bapa' }, { jawi: 'ايبو', rumi: 'ibu' }, { jawi: 'ماسakan', rumi: 'masakan' },
-            { jawi: 'رمان', rumi: 'rumah' }, { jawi: 'سكوله', rumi: 'sekolah' }
+            { jawi: 'باڤ', rumi: 'bapa' }, { jawi: 'ايبو', rumi: 'ibu' }, { jawi: 'ماساکن/ماسقن/ماسقن', rumi: 'masakan' },
+            { jawi: 'رومه', rumi: 'rumah' }, { jawi: 'سکوله', rumi: 'sekolah' }
         ],
         medium: [
-            { jawi: 'اورڠ دالم بس', rumi: 'orang dalam bas' }, { jawi: 'كنيڠ اسو امڤو', rumi: 'kucing ayam kampung' },
-            { jawi: 'ساي سوك مكن ناسي ليماق', rumi: 'saya suka makan nasi lemak' },
-            { jawi: 'دي كمنن ايتادا بنيق بيسق', rumi: 'di kampong itu ada pokok pisang' },
-            { jawi: 'موريد موريد دسن سواء بلجار', rumi: 'murid murid duduk sambil belajar' }
+            { jawi: 'ابو ماءين بولا', rumi: 'Abu main bola' }, { jawi: 'ساي سوک ماکن', rumi: 'Saya suka makan' },
+            { jawi: 'بولا ايت بيرو', rumi: 'Bola itu biru' },
+            { jawi: 'ساي اد اديق', rumi: 'Saya ada adik' },
+            { jawi: 'نام ساي ايمن', rumi: 'Nama saya Aiman' }
         ],
         hard: [
             { jawi: 'برسلتن کبڠساءن مليسيا', rumi: 'pertubuhan kebangsaan malaysia' },
