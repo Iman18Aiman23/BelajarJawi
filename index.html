@@ -13,6 +13,8 @@
 
     <div class="container">
         <header>
+            <!-- BUTANG HOME BARU -->
+            <button id="homeBtn" class="home-btn" title="Balik ke Utama">🏠</button>
             <h1>Portal Belajar Jawi</h1>
             <p>Terokai keindahan huruf Jawi secara interaktif dan menyeronokkan!</p>
         </header>
@@ -21,7 +23,7 @@
             <div class="action-card" id="belajarBtn">
                 <div class="card-icon">📖</div>
                 <h3>Belajar</h3>
-                <p>Kenali huruf-huruf Jawi</p>
+                <p>Kenali huruf dan nombor Jawi</p>
             </div>
             <div class="action-card" id="quizBtn">
                 <div class="card-icon">✍️</div>
@@ -37,6 +39,10 @@
                 <h2>Pustaka Huruf Jawi</h2>
                 <div id="hurufGrid" class="huruf-grid">
                     <!-- Huruf-huruf akan dihasilkan oleh JavaScript di sini -->
+                </div>
+                <h2 class="nombor-title">Nombor Jawi</h2>
+                <div id="nomborGrid" class="huruf-grid">
+                    <!-- Nombor-nombor akan dihasilkan oleh JavaScript di sini -->
                 </div>
             </div>
         </div>
@@ -54,7 +60,6 @@
                 <div class="quiz-header">
                     <p class="question-counter">Soalan <span id="currentQuestion">1</span> / <span id="totalQuestions">5</span></p>
                     <p>Skor: <span id="score">0</span></p>
-                    <!-- BUTANG BATAL BARU DI SINI -->
                     <button id="cancelBtn" class="cancel-btn">Batal</button>
                 </div>
                 <div class="question-box">
@@ -62,7 +67,8 @@
                 </div>
                 <div class="answer-section">
                     <input type="text" id="answerInput" placeholder="Jawapan dalam Rumi..." autocomplete="off">
-                    <button id="submitBtn">Hantar</button>
+                    <!-- Butang Hantar dan Seterusnya akan disembunyikan -->
+                    <button id="submitBtn" class="hidden">Hantar</button>
                 </div>
                 <p id="feedback" class="feedback-text"></p>
                 <button id="nextBtn" class="next-btn hidden">Soalan Seterusnya</button>
