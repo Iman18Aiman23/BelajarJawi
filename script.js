@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- DATA (Tiada Perubahan) ---
     const hurufJawi = [
-        { jawi: 'ا', rumi: 'Alif', contoh: 'Ayam', gambar: 'https://i.imgur.com/g1v0f4c.png' },
+        { jawi: 'ا', rumi: 'Alif', contoh: 'Ayam', gambar: 'https://images.icon-icons.com/1446/PNG/512/22266chicken_98785.png' },
         { jawi: 'ب', rumi: 'Ba', contoh: 'Basikal', gambar: 'https://i.imgur.com/kP52l2C.png' },
         { jawi: 'ت', rumi: 'Ta', contoh: 'Tapir', gambar: 'https://i.imgur.com/KzWfB5V.png' },
         { jawi: 'ث', rumi: 'Sa', contoh: 'Sampan', gambar: 'https://i.imgur.com/y1J0p4U.png' },
