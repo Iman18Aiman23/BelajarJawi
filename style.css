@@ -1,3 +1,6 @@
+/* ===================================
+   CSS Variables & Global Styles
+   =================================== */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -26,6 +29,9 @@ body {
     overflow-x: hidden;
 }
 
+/* ===================================
+   Main Container & Header
+   =================================== */
 .container {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -58,6 +64,9 @@ header p {
     font-weight: 500;
 }
 
+/* ===================================
+   Homepage Section
+   =================================== */
 #homeSection {
     margin-top: 40px;
     display: flex;
@@ -98,7 +107,9 @@ header p {
     margin: 0;
 }
 
-/* Modal Styles */
+/* ===================================
+   Modal (Belajar Section)
+   =================================== */
 .modal {
     display: none; 
     position: fixed; 
@@ -196,7 +207,9 @@ header p {
     border: 2px solid var(--glass-border);
 }
 
-/* Quiz Styles */
+/* ===================================
+   Quiz Section
+   =================================== */
 .hidden {
     display: none !important;
 }
@@ -244,6 +257,12 @@ header p {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px;
+}
+
+.quiz-header p {
+    margin: 0;
 }
 
 .question-box {
@@ -325,7 +344,9 @@ header p {
     color: var(--error-color);
 }
 
-/* Cancel Button Style */
+/* ===================================
+   Cancel Button Style
+   =================================== */
 .cancel-btn {
     background: transparent;
     border: 2px solid var(--error-color);
@@ -342,19 +363,4 @@ header p {
     background-color: var(--error-color);
     color: white;
     transform: scale(1.05);
-}
-
-.quiz-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 10px;
-}
-
-.quiz-header p {
-    margin: 0;
 }
